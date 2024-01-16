@@ -1,0 +1,6 @@
+#headerSearch{
+    width: calc(100% - 200px);
+    height: 100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+}

@@ -1,0 +1,12 @@
+@import "../Common/Design/common.css";
+
+#header{
+    display: flex;
+    width: 95%;
+    height: 10%;
+    border: var(--layoutBoarder);
+    box-sizing: border-box;
+    background-color: gainsboro;
+    position: fixed;
+    z-index: 2;
+}
