@@ -92,6 +92,7 @@ function HeaderSearchOpen(props){
     return render;
 }
 
+//필터 따로 함수 필요
 function SearchFilter(props){
     const list = props.list;
     const filterNum =  list.header.filterNum;
