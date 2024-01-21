@@ -89,6 +89,8 @@
     margin-top: auto;
     margin-bottom: auto;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
 }
 #headerSearchFilter2{
     width: 20%;
@@ -137,4 +139,15 @@
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
+}
+.filter1Label{
+    width: 100%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: row;
+}
+.filter1Category{
+    width: 20%;
+    margin: 0 auto 0 auto;
+    border-radius: 0;
 }

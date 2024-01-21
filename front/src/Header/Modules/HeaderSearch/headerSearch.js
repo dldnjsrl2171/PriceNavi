@@ -37,6 +37,25 @@ export default  HeaderSearch;
 
 //Function
 function HeaderSearchOpen(props){
+    const filter1 = 
+    {
+        header : 
+        {filterNum : 1} ,
+        data :
+        [ 
+        {
+            code : "0001" , 
+            name : "가전" 
+        },
+        {
+            code : "0002" ,
+            name : "패션" 
+        }
+        ]
+
+    };
+    const filter2 = [];
+    const filter3 = [];
     const render = (
         <div id="headerSearchContainer">
             <div id="headerSearchCloseButton" onClick={props.toggle}></div>
@@ -51,9 +70,15 @@ function HeaderSearchOpen(props){
                 </div>
                 <div id="headerSearchFilterBox">
                     <div id="headerSearchFilterContatinerVertical">
-                        <div id="headerSearchFilter1"></div>
-                        <div id="headerSearchFilter2"></div>
-                        <div id="headerSearchFilter3"></div>
+                        <div id="headerSearchFilter1">
+                            <SearchFilter list={filter1}></SearchFilter>
+                        </div>
+                        <div id="headerSearchFilter2">
+
+                        </div>
+                        <div id="headerSearchFilter3">
+
+                        </div>
                     </div>
                     <div id="headerSearchFilterContatinerHorizontal">
                         <div id="headerSearchFilter4"></div>
@@ -65,4 +90,23 @@ function HeaderSearchOpen(props){
         </div>
     )
     return render;
+}
+
+function SearchFilter(props){
+    const list = props.list;
+    const filterNum =  list.header.filterNum;
+    console.log(filterNum);
+    const filterId = "filter"+ filterNum;
+    console.log(filterId);
+    const dataLength = list.data.length;
+    console.log(dataLength);
+    let filterRadio = [];
+    for(let i = 0 ; i < dataLength ; i++){
+        let listData = list.data[i];
+        let code = listData.code;
+        let name = listData.name;
+        filterRadio.push(<label htmlFor={filterId+"_"+i} className={filterId+"Label"}>{name}<input type="radio" id ={filterId+"_"+i} value={code} name={filterId} className={filterId+"Category"}></input></label>);
+    }
+    console.log((filterRadio));
+    return (filterRadio);
 }
