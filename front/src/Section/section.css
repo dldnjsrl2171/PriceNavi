@@ -1,11 +1,10 @@
-@import "../Common/Design/common.css";
+
 
 #section{
     position: relative;
     width: 89.5%;
     top: 10%;
     height: 200vh;
-    border: var(--layoutBoarder);
     background-color: bisque;
     box-sizing: border-box;
 }

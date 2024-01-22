@@ -5,6 +5,8 @@ import "./headerSearch.css";
 
 //State
 import { useState } from "react";
+//img
+import searchIcon from "../../../Image/searchIcon.jpg";
 //Store
 
 
@@ -16,14 +18,17 @@ function HeaderSearch(){
     const state = useSelector(state => state.headerSearchReducer);
     const dispatch = useDispatch();
     
+    const toggleState = state.toggle;
     const toggle = ()=>{
+        
         dispatch({type : "HEADERSEARCH_TOGGLE"});
+        
     }
 
     const render = 
     (
         <div id="headerSearch">
-            {state ? <HeaderSearchOpen toggle={toggle}></HeaderSearchOpen> :
+            {toggleState ? <HeaderSearchOpen toggle={toggle}></HeaderSearchOpen> :
                 <div id="searchBar" onClick={toggle}>
                     <img src="돋보기"></img>
                 </div>
@@ -58,26 +63,41 @@ function HeaderSearchOpen(props){
     const filter3 = [];
     const render = (
         <div id="headerSearchContainer">
-            <div id="headerSearchCloseButton" onClick={props.toggle}></div>
+            <div className="headerSearchCloseContainer">
+                <div className="headerSearchCloseButtonContainer">
+                    <div className="headerSearchCloseButton" onClick={props.toggle}>
+                        <div className="headerSearchCloseButtonBar headerSearchCloseButtonBar1" ></div>
+                        <div className="headerSearchCloseButtonBar headerSearchCloseButtonBar2" ></div>
+                    </div>
+                </div>
+            </div>
             <div id="headerSearchComponents">
                 <div id="headerSearchSearchBar">
                     <input type="text" id="headerSearchInput"></input>
-                    <div id="headerSearchSubmit"></div>
+                    <div id="headerSearchSubmit"><img src={searchIcon} alt="검색" className="headerSearchIcon"></img></div>
                 </div>
                 <div id="headerSearchHistory">
-                    <div id="headerSearchHistoryItem1">Hi1</div>
-                    <div id="headerSearchHistoryItem1">Hi2</div>
+                    <div className="headerSearchHistoryItem">Hi1124125</div>
+                    <div className="headerSearchHistoryItem">Hi2</div>
+                    <div className="headerSearchHistoryItem">Hi3</div>
+                    <div className="headerSearchHistoryItem">Hi4</div>
+                    <div className="headerSearchHistoryItem">Hi5</div>
+                    <div className="headerSearchHistoryItem">Hi6</div>
+                    <div className="headerSearchHistoryItem">Hi6</div>
+                    <div className="headerSearchHistoryScrollBar">"</div>
                 </div>
                 <div id="headerSearchFilterBox">
                     <div id="headerSearchFilterContatinerVertical">
-                        <div id="headerSearchFilter1">
-                            <SearchFilter list={filter1}></SearchFilter>
-                        </div>
-                        <div id="headerSearchFilter2">
+                        <div className="headerSearchBackground">
+                            <div id="headerSearchFilter1">
+                                { <SearchFilter list={filter1}></SearchFilter> }
+                            </div>
+                            <div id="headerSearchFilter2">
 
-                        </div>
-                        <div id="headerSearchFilter3">
+                            </div>
+                            <div id="headerSearchFilter3">
 
+                            </div>
                         </div>
                     </div>
                     <div id="headerSearchFilterContatinerHorizontal">
@@ -106,7 +126,7 @@ function SearchFilter(props){
         let listData = list.data[i];
         let code = listData.code;
         let name = listData.name;
-        filterRadio.push(<label htmlFor={filterId+"_"+i} className={filterId+"Label"}>{name}<input type="radio" id ={filterId+"_"+i} value={code} name={filterId} className={filterId+"Category"}></input></label>);
+        filterRadio.push(<label htmlFor={filterId+"_"+i} className={filterId+"Label"}><h6>{name}</h6><input type="radio" id ={filterId+"_"+i} value={code} name={filterId} className={filterId+"Category"}></input></label>);
     }
     console.log((filterRadio));
     return (filterRadio);

@@ -1,0 +1,28 @@
+@import "./commonAnimation.css";
+:root{
+    /*Body*/
+    --BodyColor : #f0f0f0 ;
+    --testBorder : 1px solid black;
+    /*Components*/
+    --componentsColor : #202123;
+    --componentsColor2 : #343541;
+    --componentsFontColor : #ffffff;
+    --componentsPointColor : #005699;
+    /*Buttons*/   
+    --buttonContainerWidth : 30px;
+    --buttonContainerHeight : 30px;
+    --buttonBarWidth : 25px;
+    --buttonBarHeight : 4px;
+    --buttonBarLeft : 2.5px;
+    --buttonBarTop : 12.5px;
+    --buttonRadius : 2px;
+    --buttonColor : #232f3e;
+    --buttonHoverColor : #343541;
+    --buttonContainerShadow:#808080;
+    --buttonContainerHighlight : #e0e0e0;
+    --color1 : #232f3e;
+
+
+    --hamburgerTransition : background-color 0.2s , transform 0.8s , opacity 0.8s;
+}
+

@@ -1,3 +1,4 @@
+@import "../../../Common/Design/CSS/common.css";
 #headerSearch{
     width: calc(100% - 200px);
     height: 100%;
@@ -20,57 +21,22 @@
     width: 100%;
     min-height: 300px;
     height: 50vh;
-    background-color: gray;
+    background-color: var(--componentsColor);
     border: 1px solid black;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    animation: slideDown 0.5s ease-in-out;
 }
 
-#headerSearchCloseButton{
-    border: 1px solid black;
-    margin-left: auto;
-    width: 40px;
-    height: 40px;
-    box-sizing: border-box;
-}
+
 #headerSearchComponents{
     border: 1px solid black;
-    background-color: pink;
     width: 100%;
     height: 100%;
+    
 }
-#headerSearchSearchBar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 40px;
-    border: 1px solid black;
-}
-#headerSearchInput{
-    width: 90%;
-    height: 20px;
-    border: 1px solid black;
-    border-radius: 4px;
-}
-#headerSearchSubmit{
-    border: 1px solid black;
-    width: 20px;
-    height: 22px;
-    margin-left: -22px;
-}
-#headerSearchHistory{
-    display: flex;
-    width: 100%;
-    height: 20px;
-    border: 1px solid black;
-}
-#headerSearchHistoryItem1{
-    margin-left: 10%;
-    border: 1px solid black;
-}
+
 #headerSearchFilterBox{
     display: flex;
     width: 100%;
@@ -78,10 +44,12 @@
 }
 #headerSearchFilterContatinerVertical{
     display: flex;
-    background-color: aqua;
     width: 70%;
     height: 100%;
+    align-items: center;
+    justify-content: center;
 }
+
 #headerSearchFilter1{
     width: 20%;
     height: 90%;
@@ -112,7 +80,8 @@
 #headerSearchFilterContatinerHorizontal{
     width: 30%;
     height: 100%;
-    background-color: blueviolet;
+    border: 1px solid black;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
@@ -142,12 +111,134 @@
 }
 .filter1Label{
     width: 100%;
-    padding-left: 5%;
     display: flex;
     flex-direction: row;
+    color: #e8ebed;
+}
+.filter1Label:hover{
+    cursor: pointer;
 }
 .filter1Category{
     width: 20%;
     margin: 0 auto 0 auto;
     border-radius: 0;
+    cursor: pointer;
+}
+.headerSearchBackground{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    border-radius: 5px;
+    background-color: #343541;
+}
+
+/*SearchBar*/
+#headerSearchSearchBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    
+}
+#headerSearchInput{
+    width: 80%;
+    padding-right: 10%;
+    height: 25px;
+    border: 0px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px 1px black;
+    border-radius: 4px;
+    background-color: var(--componentsColor2);
+    color: var(--buttonContainerHighlight);
+    font-size: 14px;
+    transition: border-bottom 1s , transform 1s;
+}
+
+.headerSearchIcon{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+#headerSearchInput:focus-visible{
+    border-bottom: 2px solid var(--componentsPointColor);
+    outline: 0;
+}
+#headerSearchSubmit{
+    position: absolute;
+    left: calc(80% - var(--buttonBarWidth));
+    background-color: palegoldenrod;
+    width: var(--buttonContainerHeight);
+    height: var(--buttonBarWidth);
+}
+#headerSearchHistory{
+    display: flex;
+    width: 100%;
+    height: 20px;
+    border: 1px solid black;
+    overflow: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+    box-sizing: border-box;
+}
+#headerSearchHistory::-webkit-scrollbar{
+    display:none;
+}
+
+.headerSearchHistoryItem{
+    margin-left: 10%;
+    color: var(--componentsFontColor);
+    vertical-align: middle;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    background-color: var(--componentsColor2);
+    box-sizing: border-box;
+}
+
+/*CloseBar*/
+.headerSearchCloseContainer{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--BodyColor);
+}
+.headerSearchCloseButtonContainer{
+    margin-left: auto;
+    width: var(--buttonContainerWidth);
+    height: var(--buttonContainerHeight);
+}
+.headerSearchCloseButton{
+    width: var(--buttonContainerWidth);
+    height: var(--buttonContainerHeight);
+    cursor: pointer;
+    position: absolute;
+    transition: box-shadow 0.5s;
+}
+.headerSearchCloseButtonBar{
+    position: absolute;
+    left: var(--buttonBarLeft);
+    top: var(--buttonBarTop);
+    width: var(--buttonBarWidth);
+    height: var(--buttonBarHeight);
+    background-color: var(--buttonColor);
+    border-radius: var(--buttonRadius);
+    margin: auto;
+}
+.headerSearchCloseButton:hover {
+    box-shadow: 0px 0px 4px 1px var(--buttonContainerShadow);
+    
+}
+
+.headerSearchCloseButtonBar.headerSearchCloseButtonBar1{
+    transform: rotate(45deg);
+}
+.headerSearchCloseButtonBar.headerSearchCloseButtonBar2{
+    transform: rotate(-45deg);
 }

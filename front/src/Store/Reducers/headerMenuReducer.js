@@ -48,6 +48,7 @@ function HeaderMenuReducer(state = initState, action) {
       })
     }
   }
+  console.log("상태변함");
   if(state){
     console.log("열림");
   }else{

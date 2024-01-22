@@ -7,6 +7,7 @@ import Header from "./Header/header";
 import Section from "./Section/section";
 import Aside from "./Aside/aside";
 import Modal from "./Common/Modal/modal";
+import ComponentFactory from "./componentFactory.js";
 
 function App() {
   return (   
@@ -15,6 +16,7 @@ function App() {
       <Section></Section>
       <Aside></Aside>
       <Modal></Modal>
+      
     </Provider>
   );
 }

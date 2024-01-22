@@ -1,7 +1,6 @@
-@import "../Common/Design/common.css";
+
 
 #aside{
-    border: var(--layoutBoarder);
     position: fixed;
     top: 10%;
     left: 87.5%;

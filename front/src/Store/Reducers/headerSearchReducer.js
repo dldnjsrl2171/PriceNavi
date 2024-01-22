@@ -1,21 +1,20 @@
-const initState = false;
+const initState = {toggle : false};
 const HEADERSEARCH_TOGGLE = "HEADERSEARCH_TOGGLE";
 function HeaderSearchReducer(state = initState , action){
-    if(state === undefined){
-        state = initState;
-    }
-    
-    
+    const newState = {...state};
+
     switch(action.type){
         case HEADERSEARCH_TOGGLE : 
-        if(state){
-            state = false;
+        const toggleState = newState.toggle;
+        if(toggleState){
+            newState.toggle = false;
         }else{
-            state = true;
+            newState.toggle = true;
         }
+        break;
     }
-
-    return state;
+    console.log(newState)
+    return newState;
 }
 
 export default HeaderSearchReducer;

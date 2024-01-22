@@ -21,9 +21,7 @@ function Modal(){
     }
     const render = 
     (
-        <div id="modal">
-            {profile}
-        </div>
+        null
     );
     return render;
 }
