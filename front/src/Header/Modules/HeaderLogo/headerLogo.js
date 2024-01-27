@@ -1,18 +1,26 @@
 //CSS
 import "./headerLogo.css";
+//Image
+import logo from "../../../Image/logo.png";
 //State
 
 //Modules
 
 
 
-//Level 2 - HeaderLogo
 function HeaderLogo(){
-    const render = (
-        <div id="headerLogo">
-            <img src="" alt="로고" title="PriceNaviLogo" />
+   const onClickEvent = () => 
+   {  
+    window.scrollTo({top : 0 , behavior : "smooth"});
+   }
+    const render = 
+    (
+        <div id="headerLogo" onClick={onClickEvent}>
+            <div className="headerLogoContainer">
+                <h4 className="headerLogoText">PriceNavi</h4>
+            </div>
         </div>
-    );
+    )
     return render;
 }
 

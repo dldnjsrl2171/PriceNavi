@@ -1,10 +1,14 @@
-
 #header{
-    display: flex;
-    width: 95%;
-    height: 10%;
-    
-    box-sizing: border-box;
     position: fixed;
-    z-index: 2;
+    left: 0;
+    padding-left: var(--headerPadding);
+    padding-right: var(--headerPadding);
+    width: var(--headerWidth);
+    height: var(--headerHeight);
+    border: var(--tb);
+    background-color: var(--boxColor);
+    margin-bottom: var(--tagSpace);
+    z-index: var(--appModuleIndex);
+    display: flex;
+    flex-direction: row;
 }

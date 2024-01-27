@@ -1,133 +1,90 @@
 //CSS
-import { useDispatch, useSelector } from "react-redux";
 import "./headerSearch.css";
 //Modules
 
 //State
-import { useState } from "react";
+
 //img
-import searchIcon from "../../../Image/searchIcon.jpg";
+import headerSearchIcon from "../../../Image/search.png"
+import { useDispatch, useSelector } from "react-redux";
+import InputInitButton from "../../../Common/Components/Buttons/inputInitButton";
+import InputText from "../../../Common/Components/Input/inputText";
+
 //Store
-
-
-//Level 1 - Header
 function HeaderSearch(){
-    
-    const [ headerSearchState , setHeaderSearchState ]= useState(null);
-    
-    const state = useSelector(state => state.headerSearchReducer);
+
     const dispatch = useDispatch();
-    
+    const state = useSelector((state)=>state.headerSearchReducer);
     const toggleState = state.toggle;
-    const toggle = ()=>{
-        
+    const toggle = () => 
+    {
         dispatch({type : "HEADERSEARCH_TOGGLE"});
-        
-    }
+    };
 
     const render = 
     (
         <div id="headerSearch">
-            {toggleState ? <HeaderSearchOpen toggle={toggle}></HeaderSearchOpen> :
-                <div id="searchBar" onClick={toggle}>
-                    <img src="돋보기"></img>
-                </div>
-            }
-        </div>
+            <div className="headerSearchContainer">
+                {toggleState ?  <HeaderSearchOpen toggle={toggle} /> : <HeaderSearchClosed toggle={toggle} />}
+            </div>
+        </div> 
     );
     return render;
 }
 
 export default  HeaderSearch;
 
-//Function
-function HeaderSearchOpen(props){
-    const filter1 = 
+function HeaderSearchClosed(props){
+    
+    const toggleSearch = () => 
     {
-        header : 
-        {filterNum : 1} ,
-        data :
-        [ 
-        {
-            code : "0001" , 
-            name : "가전" 
-        },
-        {
-            code : "0002" ,
-            name : "패션" 
-        }
-        ]
-
+        const toggle =  props.toggle;
+        toggle();
     };
-    const filter2 = [];
-    const filter3 = [];
-    const render = (
-        <div id="headerSearchContainer">
-            <div className="headerSearchCloseContainer">
-                <div className="headerSearchCloseButtonContainer">
-                    <div className="headerSearchCloseButton" onClick={props.toggle}>
-                        <div className="headerSearchCloseButtonBar headerSearchCloseButtonBar1" ></div>
-                        <div className="headerSearchCloseButtonBar headerSearchCloseButtonBar2" ></div>
-                    </div>
-                </div>
-            </div>
-            <div id="headerSearchComponents">
-                <div id="headerSearchSearchBar">
-                    <input type="text" id="headerSearchInput"></input>
-                    <div id="headerSearchSubmit"><img src={searchIcon} alt="검색" className="headerSearchIcon"></img></div>
-                </div>
-                <div id="headerSearchHistory">
-                    <div className="headerSearchHistoryItem">Hi1124125</div>
-                    <div className="headerSearchHistoryItem">Hi2</div>
-                    <div className="headerSearchHistoryItem">Hi3</div>
-                    <div className="headerSearchHistoryItem">Hi4</div>
-                    <div className="headerSearchHistoryItem">Hi5</div>
-                    <div className="headerSearchHistoryItem">Hi6</div>
-                    <div className="headerSearchHistoryItem">Hi6</div>
-                    <div className="headerSearchHistoryScrollBar">"</div>
-                </div>
-                <div id="headerSearchFilterBox">
-                    <div id="headerSearchFilterContatinerVertical">
-                        <div className="headerSearchBackground">
-                            <div id="headerSearchFilter1">
-                                { <SearchFilter list={filter1}></SearchFilter> }
-                            </div>
-                            <div id="headerSearchFilter2">
 
-                            </div>
-                            <div id="headerSearchFilter3">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div id="headerSearchFilterContatinerHorizontal">
-                        <div id="headerSearchFilter4"></div>
-                        <div id="headerSearchFilter5"></div>
-                        <div id="headerSearchFilter6"></div>
-                    </div>
-                </div>
+    const render = 
+    (
+        <div id="headerSearchCallSearchButton" className="headerSearchCallSearchButton" onClick={toggleSearch}>
+            <div className="headerSearchButtonContainer">
+                <img src={headerSearchIcon} alt="SearchButton" className="headerSearchButtonIcon"></img>
             </div>
         </div>
-    )
+    );
     return render;
 }
 
-//필터 따로 함수 필요
-function SearchFilter(props){
-    const list = props.list;
-    const filterNum =  list.header.filterNum;
-    console.log(filterNum);
-    const filterId = "filter"+ filterNum;
-    console.log(filterId);
-    const dataLength = list.data.length;
-    console.log(dataLength);
-    let filterRadio = [];
-    for(let i = 0 ; i < dataLength ; i++){
-        let listData = list.data[i];
-        let code = listData.code;
-        let name = listData.name;
-        filterRadio.push(<label htmlFor={filterId+"_"+i} className={filterId+"Label"}><h6>{name}</h6><input type="radio" id ={filterId+"_"+i} value={code} name={filterId} className={filterId+"Category"}></input></label>);
-    }
-    console.log((filterRadio));
-    return (filterRadio);
+function HeaderSearchOpen(props){
+    
+    const toggleSearch = () => 
+    {
+        
+        //State
+        const toggle =  props.toggle;
+        toggle();
+    };
+
+    const render = 
+    (
+        <div id="headerSearchBox">
+            <div className="headerSearchBoxContainer">
+                <div className="headerSearchBoxContentsContainer">
+                    <div className="headerSearchBoxMenuContainer">
+                        <div className="buttonContainer">
+                            <div id="headerSearchBoxMenuCloseButton" className="button" onClick={toggleSearch}>
+                                <div className="closeButtonBar closeBar1"></div>
+                                <div className="closeButtonBar closeBar2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="headerSearchInputContainer">
+                        <div className="searchBarContainer">
+                            <InputText id="searchItemName" title="" placeHolder="검색어 입력"></InputText>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="headerSearchBoxBackground"></div>
+        </div>
+    );
+    return render;
 }

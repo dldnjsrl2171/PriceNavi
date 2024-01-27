@@ -1,10 +1,9 @@
-
-
 #aside{
     position: fixed;
-    top: 10%;
-    left: 87.5%;
-    width: 10%;
-    height: 100vh;
-    box-sizing: border-box;
+    left: var(--asideLeft);
+    top: var(--asideTop);
+    width: var(--asideWidth);
+    height: var(--asideHeight);
+    border: var(--tb);
+    background-color: var(--boxColor);
 }

@@ -1,244 +1,114 @@
-@import "../../../Common/Design/CSS/common.css";
 #headerSearch{
-    width: calc(100% - 200px);
-    height: 100%;
-    border: 1px solid black;
-    box-sizing: border-box;
-    display: flex;
+    width: var(--headerSearchWidth);
+    height: var(--headerModuleHeight);
 }
-
-#searchBar{
-    width: 50px;
-    height: 50px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: 50px;
-    border: 1px solid black;
-}
-
-#headerSearchContainer{
+.headerSearchContainer{
     width: 100%;
-    min-height: 300px;
-    height: 50vh;
-    background-color: var(--componentsColor);
-    border: 1px solid black;
+    height: 100%;
+}
+
+/*Closed*/
+.headerSearchCallSearchButton{
+    float: right;
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerSearchButtonContainer{
+    width: 80%;
+    height: 80%;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.headerSearchButtonContainer:hover{
+    box-sizing: border-box;
+    background-color: var(--boxHighrigthColor);
+}
+
+.headerSearchButtonIcon{
+    width: 100%;
+    height: 100%;
+}
+
+/*Open*/
+#headerSearchBox{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.headerSearchBoxContainer{
+    position: fixed;
+    width: var(--headerSearchBoxContainerWidth);
+    left: var(--headerSearchBoxContainerLeft);
+    height: 50vh;
+    border: var(--tb);
+    background-color: var(--modalBaseColor);
+    z-index: var(--modalIndex);
     animation: slideDown 0.5s ease-in-out;
 }
-
-
-#headerSearchComponents{
-    border: 1px solid black;
+.headerSearchBoxBackground{
+    position: fixed;
+    left: 0;
     width: 100%;
     height: 100%;
-    
+    background-color: var(--modalBackgroundColor) ;
+    opacity: 0.5;
+    z-index: var(--modalBackgroundIndex);
 }
-
-#headerSearchFilterBox{
-    display: flex;
+.headerSearchBoxContentsContainer{
     width: 100%;
-    height: calc(100% - 62px) ;
-}
-#headerSearchFilterContatinerVertical{
-    display: flex;
-    width: 70%;
     height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-#headerSearchFilter1{
-    width: 20%;
-    height: 90%;
-    margin-left: 10%;
-    margin-top: auto;
-    margin-bottom: auto;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
-#headerSearchFilter2{
-    width: 20%;
-    height: 90%;
-    margin-left: 10%;
-    margin-top: auto;
-    margin-bottom: auto;
-    border: 1px solid black;
-}
-#headerSearchFilter3{
-    width: 20%;
-    height: 90%;
-    margin-left: 10%;
-    margin-top: auto;
-    margin-bottom: auto;
-    border: 1px solid black;
-}
 
-#headerSearchFilterContatinerHorizontal{
-    width: 30%;
-    height: 100%;
-    border: 1px solid black;
-    box-sizing: border-box;
+.headerSearchBoxMenuContainer{
+    width: 100%;
+    height: var(--headerHeight);
+    border: var(--tb);
+}
+.headerSearchBoxMenuButtonContainer{
+    float: right;
+    width: var(--buttonSize);
+    height: var(--buttonSize);
+    cursor: pointer;
+}
+.headerSearchBoxMenuCloseButton{
+    width: var(--buttonSize);
+    height: var(--buttonSize);
+    border: var(--tb);
     display: flex;
     flex-direction: column;
-}
-#headerSearchFilter4{
-    width: 80%;
-    border: 1px solid black;
-    height: 20%;
-    margin-top: 10%;
-    margin-left: auto;
-    margin-right: auto;
-}
-#headerSearchFilter5{
-    width: 80%;
-    border: 1px solid black;
-    height: 20%;
-    margin-top: 10%;
-    margin-left: auto;
-    margin-right: auto;
-}
-#headerSearchFilter6{
-    width: 80%;
-    border: 1px solid black;
-    height: 20%;
-    margin-top: 10%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.filter1Label{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    color: #e8ebed;
-}
-.filter1Label:hover{
-    cursor: pointer;
-}
-.filter1Category{
-    width: 20%;
-    margin: 0 auto 0 auto;
-    border-radius: 0;
-    cursor: pointer;
-}
-.headerSearchBackground{
-    width: 90%;
-    height: 90%;
-    display: flex;
-    border-radius: 5px;
-    background-color: #343541;
-}
-
-/*SearchBar*/
-#headerSearchSearchBar{
-    display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 40px;
-    
 }
-#headerSearchInput{
-    width: 80%;
-    padding-right: 10%;
-    height: 25px;
-    border: 0px;
-    box-sizing: border-box;
-    box-shadow: 1px 1px 1px 1px black;
-    border-radius: 4px;
-    background-color: var(--componentsColor2);
-    color: var(--buttonContainerHighlight);
-    font-size: 14px;
-    transition: border-bottom 1s , transform 1s;
-}
-
-.headerSearchIcon{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-}
-
-#headerSearchInput:focus-visible{
-    border-bottom: 2px solid var(--componentsPointColor);
-    outline: 0;
-}
-#headerSearchSubmit{
-    position: absolute;
-    left: calc(80% - var(--buttonBarWidth));
-    background-color: palegoldenrod;
-    width: var(--buttonContainerHeight);
-    height: var(--buttonBarWidth);
-}
-#headerSearchHistory{
-    display: flex;
-    width: 100%;
-    height: 20px;
-    border: 1px solid black;
-    overflow: scroll;
-    -ms-overflow-style: none; /* 인터넷 익스플로러 */
-    scrollbar-width: none; /* 파이어폭스 */
-    box-sizing: border-box;
-}
-#headerSearchHistory::-webkit-scrollbar{
-    display:none;
-}
-
-.headerSearchHistoryItem{
-    margin-left: 10%;
-    color: var(--componentsFontColor);
-    vertical-align: middle;
-    text-align: center;
-    height: 20px;
-    line-height: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 10px;
-    cursor: pointer;
-    background-color: var(--componentsColor2);
-    box-sizing: border-box;
-}
-
-/*CloseBar*/
-.headerSearchCloseContainer{
-    width: 100%;
-    box-sizing: border-box;
-    background-color: var(--BodyColor);
-}
-.headerSearchCloseButtonContainer{
-    margin-left: auto;
-    width: var(--buttonContainerWidth);
-    height: var(--buttonContainerHeight);
-}
-.headerSearchCloseButton{
-    width: var(--buttonContainerWidth);
-    height: var(--buttonContainerHeight);
-    cursor: pointer;
-    position: absolute;
-    transition: box-shadow 0.5s;
-}
-.headerSearchCloseButtonBar{
-    position: absolute;
-    left: var(--buttonBarLeft);
-    top: var(--buttonBarTop);
+.headerSearchBoxMenuButtonBar1{
     width: var(--buttonBarWidth);
     height: var(--buttonBarHeight);
-    background-color: var(--buttonColor);
-    border-radius: var(--buttonRadius);
-    margin: auto;
-}
-.headerSearchCloseButton:hover {
-    box-shadow: 0px 0px 4px 1px var(--buttonContainerShadow);
-    
+    background-color: #222831;
 }
 
-.headerSearchCloseButtonBar.headerSearchCloseButtonBar1{
-    transform: rotate(45deg);
+.headerSearchBoxFilterContainer{
+    width: 100%;
+    height: var(--headerSearchBoxFilterContainerHeight);
 }
-.headerSearchCloseButtonBar.headerSearchCloseButtonBar2{
-    transform: rotate(-45deg);
+
+.headerSearchInputContainer{
+    width: 100%;
+    height: 10%;
+    min-height: var(--headerSearchInputContainerHeight);
+    border: var(--tb);
+}
+.searchBarContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,15 +1,19 @@
+@import "./Common/Design/CSS/common.css";
+@import "./Common/Design/CSS/commonAnimation.css";
+
 body{
-    margin: 0;
+      margin: 0;
       padding: 0;
       height: 100vh; /* 100% 높이 설정 */
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f0f0f0; /* 원하는 배경색으로 설정 */
+      background-color: var(--baseColor); /* 원하는 배경색으로 설정 */
+      z-index: var(--bodyIndex);
 }
 #root{
-    width: 95%;
-    height: 100%;
+    width: var(--rootWidth);
+    height: var(--rootHeight);
     display: flex;
     flex-wrap: wrap;
 }

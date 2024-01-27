@@ -5,7 +5,7 @@ import LoginReducer from "./Reducers/loginReducer";
 import HeaderSearchReducer from "./Reducers/headerSearchReducer";
 const rootReducer = combineReducers(
     {
-        headerMenu : HeaderMenuReducer , 
+        headerMenuReducer : HeaderMenuReducer , 
         modalReducer : ModalReducer ,
         loginReducer : LoginReducer , 
         headerSearchReducer : HeaderSearchReducer

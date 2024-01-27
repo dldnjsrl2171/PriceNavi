@@ -1,10 +1,10 @@
-
-
 #section{
-    position: relative;
-    width: 89.5%;
-    top: 10%;
-    height: 200vh;
-    background-color: bisque;
-    box-sizing: border-box;
+    position: absolute;
+    width: var(--sectionWidth);
+    margin-top: var(--tagSpace);
+    margin-right: var(--tagSpace);
+    min-height: var(--sectionMinHeight);
+    top: var(--sectionTop);
+    background-color: var(--boxColor);
+    border: var(--tb);
 }
