@@ -1,0 +1,159 @@
+
+:root{
+    /*Test*/
+
+    /*border: var(--tb);*/
+    --tb : 1px solid black; 
+
+    /*Color*/
+    --baseColor : #222831;
+    --boxColor : #393E46;
+    --boxBorderColor : #EEEEEE;
+    --boxHighrigthColor : #4E5968;
+    --modalBaseColor : #181c22;
+    --modalBackgroundColor : #12161C;
+    --pointColor : #00ADB5;
+    --pointColorBackgroundColor :rgba(0, 172, 181, 0.185);
+    --textColor : #EEEEEE;
+
+    --color1 : #FF9800;
+    --color3 : #546E7A;
+    --color4 : #12161C;
+    --color5 : #0A0E11;
+    --complementaryColor1 : #FF5722;
+
+    /*All*/
+    --originSpace : 5px;
+    --commonBoxSizing : border-box;
+
+    --bodyIndex : 0;
+    --appModuleIndex : 1;
+    --modalBackgroundIndex : 98;
+    --modalIndex : 99;
+
+    --buttonSize : 50px;
+    --buttonBarWidth : 40px;
+    --buttonBarHeight : 3px;
+    
+    --InputWidth : 10%;
+    --InputFocusWidth : 70%;
+    --InputTextHeight : 30px;
+
+    /*Root*/
+    --rootWidth : 70%;
+    --rootHeight : 100%;
+    --rootLeft : 15%;
+    --rootRigth : 15%;
+
+    /*Header*/
+    --headerWidth : 70%;
+    --headerHeight : 50px;
+    --headerPadding : calc((100% - var(--headerWidth))/2);
+        /*HeaderModules*/
+        --headerModuleHeight : 100%;
+        /*HeaderLogo*/
+        --headerLogoHeight : 5%;
+        --headerLogoSize : 100px;
+        /*HeaderSearch*/
+        --headerSearchWidth : calc(100% - var(--headerLogoSize) - var(--headerMenuWidth));
+        --headerSearchBoxContainerHeight : 50vh;
+        --headerSearchBoxContainerLeft : calc(var(--headerPadding) + var(--headerLogoSize));
+        --headerSearchBoxContainerWidth : calc(var(--headerWidth) - (var(--headerLogoSize)) - (var(--headerMenuWidth)));
+        --headerSearchBoxFilterContainerHeight : calc(var(--headerSearchBoxContainerHeight) - var(--headerHeight));
+        --headerSearchInputContainerHeight : 50px;
+        /*HeaderMenu*/
+        --headerMenuWidth : 50px;
+    /*Section*/
+    --sectionWidthRate : 60%;
+    --sectionWidth : calc(var(--sectionWidthRate) - var(--originSpace));
+    --sectionMinHeight : 100%;
+    --sectionTop : calc(var(--headerHeight) + (var(--originSpace) * 2));
+
+    /*Aside*/
+    --asideTop : calc(var(--headerHeight) + var(--originSpace) * 2);
+    --asideLeft : calc(var(--sectionWidth) + var(--rootLeft) + var(--originSpace) * 2);
+    --asideWidthRate : 10%;
+    --asideWidth : calc(var(--asideWidthRate) - var(--originSpace));
+    --asideHeight : calc(100% - var(--headerHeight) - var(--originSpace) * 3);
+}
+/*Lable*/
+.inputLable{
+    width: var(--InputWidth);
+    height: var(--InputTextHeight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputLable:focus-within{
+    animation: focusInput 1.0s ease-in-out;
+    width: var(--InputFocusWidth);
+}
+.inputLable.filledInput{
+    width: var(--InputFocusWidth);
+}
+
+/*Text-Search*/
+.searchBarContainer{
+    width: 100%;
+    min-height: 50px;
+    height: 10%;
+    border: var(--tb);
+}
+.inputText{
+    width: 100%;
+    height: 100%;
+    min-width: 100px;
+    border: none;
+    border-bottom: 1px solid var(--pointColor);
+    background-color: transparent;
+    outline: unset;
+    color: var(--textColor);
+    text-align: center;
+}
+
+.inputText:focus-visible{
+    outline: unset;
+}
+
+.inputInitButton{
+    min-width: 10px;
+    min-height: 10px;
+    border: var(--tb);
+    cursor: pointer;
+}
+
+
+/*Button*/
+.buttonContainer{
+    float: right;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--tb);
+}
+.button{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+    border: var(--tb);
+}
+.button:hover{
+    background-color: var(--boxHighrigthColor);
+}
+.closeButtonBar{
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    margin-top: 17.5px;
+    background-color: var(--pointColor);
+}
+.closeButtonBar.closeBar1{
+    transform: rotate(45deg);
+}
+.closeButtonBar.closeBar2{
+    transform: rotate(-45deg);
+}

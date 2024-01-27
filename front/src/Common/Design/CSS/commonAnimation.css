@@ -1,0 +1,41 @@
+@keyframes slideDown{
+    from{
+        transform : translateY(-100%);
+        opacity: 0.5;
+    }
+    to{
+        transform : translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from{
+        transform : translateY(0);
+    }
+    to{
+        transform : translateY(-100%);
+    }
+}
+
+@keyframes focusInput {
+   from{
+        width: var(--InputWidth);
+        border-bottom: 1px solid var(--pointColor);
+    }
+   to{
+        width: var(--InputFocusWidth);
+        border-bottom: 1px solid var(--pointColor);
+   }
+}
+
+@keyframes focusOutInput {
+    from{
+        width: var(--InputTextFocusWidth);
+        border-bottom: 1px solid var(--pointColor);
+     }
+    to{
+        width: var(--InputTextWidth);
+        border-bottom: 1px solid var(--pointColor);
+    }
+ }
