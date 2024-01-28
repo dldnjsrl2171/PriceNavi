@@ -21,7 +21,6 @@ function InputText(props){
         const initElement = document.getElementById(id);
         const inputData = initElement.value;
 
-
         if(inputData.length==0){
             setState({initButtonVisibleToggle : false});
         }else{
@@ -32,8 +31,14 @@ function InputText(props){
 
     const initInput = () => {
         const initElement = document.getElementById(id);
-        initElement.value = null;
         initElement.focus();
+        initElement.value = "";
+
+        if(initElement.value.length==0){
+            setState({initButtonVisibleToggle : false});
+        }else{
+            setState({initButtonVisibleToggle : true});
+        }
     }
 
     const render = (
@@ -53,7 +58,10 @@ function InputText(props){
             id={initButtonId} 
             className="inputInitButton"
             onClick={initInput}
-            />
+            >
+            <div className="closeButtonBar mini closeBar1"></div>
+            <div className="closeButtonBar mini closeBar2"></div>     
+            </div>
             :
             null
             }

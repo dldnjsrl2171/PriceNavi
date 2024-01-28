@@ -3,17 +3,19 @@
     /*Test*/
 
     /*border: var(--tb);*/
-    --tb : 1px solid black; 
+    --tb : 0px solid black; 
 
     /*Color*/
+    --backColor : #ffffff;
     --baseColor : #222831;
     --boxColor : #393E46;
     --boxBorderColor : #EEEEEE;
     --boxHighrigthColor : #4E5968;
-    --modalBaseColor : #181c22;
-    --modalBackgroundColor : #12161C;
-    --pointColor : #00ADB5;
+    --modalBaseColor : #222831;
+    --modalBackgroundColor : #000000;
+    --pointColor : #DDDDDD;
     --pointColorBackgroundColor :rgba(0, 172, 181, 0.185);
+    --specialColor : #00ADB5;
     --textColor : #EEEEEE;
 
     --color1 : #FF9800;
@@ -83,6 +85,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid var(--pointColor);
 }
 
 .inputLable:focus-within{
@@ -105,7 +108,6 @@
     height: 100%;
     min-width: 100px;
     border: none;
-    border-bottom: 1px solid var(--pointColor);
     background-color: transparent;
     outline: unset;
     color: var(--textColor);
@@ -121,6 +123,10 @@
     min-height: 10px;
     border: var(--tb);
     cursor: pointer;
+    transition: background-color 0.5s ease-in-out;;
+}
+.inputInitButton:hover{
+    background-color: var(--boxHighrigthColor);
 }
 
 
@@ -144,6 +150,7 @@
 .button:hover{
     background-color: var(--boxHighrigthColor);
 }
+
 .closeButtonBar{
     position: absolute;
     width: 40px;
@@ -151,9 +158,19 @@
     margin-top: 17.5px;
     background-color: var(--pointColor);
 }
+
+.closeButtonBar.mini{
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    margin-top: 4px;
+    background-color: var(--pointColor);
+}
+
 .closeButtonBar.closeBar1{
     transform: rotate(45deg);
 }
 .closeButtonBar.closeBar2{
     transform: rotate(-45deg);
 }
+

@@ -66,24 +66,33 @@ function HeaderSearchOpen(props){
     const render = 
     (
         <div id="headerSearchBox">
-            <div className="headerSearchBoxContainer">
-                <div className="headerSearchBoxContentsContainer">
-                    <div className="headerSearchBoxMenuContainer">
-                        <div className="buttonContainer">
-                            <div id="headerSearchBoxMenuCloseButton" className="button" onClick={toggleSearch}>
-                                <div className="closeButtonBar closeBar1"></div>
-                                <div className="closeButtonBar closeBar2"></div>
+            <form id="headerSearchForm">
+                <div className="headerSearchBoxContainer">
+                <div className="headerSearchBoxMenuContainer">
+                <div className="buttonContainer">
+                    <div id="headerSearchBoxMenuCloseButton" className="button" onClick={toggleSearch}><div className="closeButtonBar closeBar1"></div><div className="closeButtonBar closeBar2"></div></div></div>
+                </div>
+                    <div className="headerSearchBoxContentsContainer">
+                        <div className="headerSearchBox" id="headerSearchBox">
+                            <div className="headerSearchInputContainer">
+                                <InputText id="searchItemName" title="검색어 입력" placeHolder="검색어 입력"></InputText>
+                            </div>
+                            <div className="headerSearchFilterContainer">
+                                <div className="headerSearchFilterBox type1">
+
+                                </div>
+                                <div className="headerSearchFilterBox type1">
+
+                                </div>
+                                <div className="headerSearchFilterBox type2">
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="headerSearchInputContainer">
-                        <div className="searchBarContainer">
-                            <InputText id="searchItemName" title="" placeHolder="검색어 입력"></InputText>
-                        </div>
-                    </div>
+                    </div>    
                 </div>
-            </div>
-            <div className="headerSearchBoxBackground"></div>
+                <div className="headerSearchBoxBackground"></div>
+            </form>
         </div>
     );
     return render;

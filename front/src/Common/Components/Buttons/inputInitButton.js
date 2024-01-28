@@ -4,6 +4,7 @@ function InputInitButton(props){
 
     //Init Value
     const initItem = () => {
+        document.getElementById(targetElement).focus();
         document.getElementById(targetElement).value= "";
     }
 

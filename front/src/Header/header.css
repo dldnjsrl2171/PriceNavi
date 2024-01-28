@@ -1,8 +1,6 @@
 #header{
     position: fixed;
-    left: 0;
-    padding-left: var(--headerPadding);
-    padding-right: var(--headerPadding);
+    left: var(--headerPadding);
     width: var(--headerWidth);
     height: var(--headerHeight);
     border: var(--tb);
