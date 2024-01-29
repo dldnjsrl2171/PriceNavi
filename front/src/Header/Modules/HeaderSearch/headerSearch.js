@@ -78,14 +78,20 @@ function HeaderSearchOpen(props){
                                 <InputText id="searchItemName" title="검색어 입력" placeHolder="검색어 입력"></InputText>
                             </div>
                             <div className="headerSearchFilterContainer">
-                                <div className="headerSearchFilterBox type1">
+                                <div className="headerSearchFilterBox">
+                                    <div className="headerSearchFilter">
+                                            <label htmlFor="categoryOption" className="radioLabel">
+                                                <h5 className="radioTitle">가전</h5>
+                                                <input type="radio" className="radioInput" name="headerSearchCategory1" id="categoryOption" title="categoryOption" value="00001"></input>
+                                            </label>
+                                            
+                                    </div>
+                                    <div className="headerSearchFilter">
 
-                                </div>
-                                <div className="headerSearchFilterBox type1">
+                                    </div>
+                                    <div className="headerSearchFilter">
 
-                                </div>
-                                <div className="headerSearchFilterBox type2">
-
+                                    </div>
                                 </div>
                             </div>
                         </div>

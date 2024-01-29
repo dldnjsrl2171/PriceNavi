@@ -3,7 +3,7 @@
     /*Test*/
 
     /*border: var(--tb);*/
-    --tb : 0px solid black; 
+    --tb : 1px solid black; 
 
     /*Color*/
     --backColor : #ffffff;
@@ -174,3 +174,24 @@
     transform: rotate(-45deg);
 }
 
+/*Radio*/
+.radioLabel{
+    width: 100% ;
+    margin: 1%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+}
+.headerSearchFilter .radioInput:checked + .radioLabel {
+    background-color: yellow;
+}
+.radioInput:checked + .radioLabel {
+    background-color: yellow;
+  }
+.radioTitle{
+    width: 90%;
+}
+.radioInput{
+    width: 100%;
+    display: block;
+}

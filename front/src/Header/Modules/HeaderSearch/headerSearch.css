@@ -41,6 +41,8 @@
     left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .headerSearchBoxContainer{
     position: fixed;
@@ -119,14 +121,26 @@
 .headerSearchFilterContainer{
     width: 100%;
     height: 90%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.headerSearchFilterBox{
+    width: 90%;
+    padding: 0 2.5%;
+    height: 90%;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+}
+.headerSearchFilter{
+    width: 100%;
+    height: 90%;
+    margin: 0%;
+    box-sizing: border-box;
+    background-color: var(--boxHighrigthColor);
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
 }
 
-.headerSearchFilterBox.type1{
-    width: 20%;
-    height: 80%;
-    margin-top: 5%;
-    margin-left: 5%;
-    border: var(--tb);
-}
