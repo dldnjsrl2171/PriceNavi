@@ -9,6 +9,7 @@ import headerSearchIcon from "../../../Image/search.png"
 import { useDispatch, useSelector } from "react-redux";
 import InputInitButton from "../../../Common/Components/Buttons/inputInitButton";
 import InputText from "../../../Common/Components/Input/inputText";
+import InputRadio from "../../../Common/Components/Input/inputRadio";
 
 //Store
 function HeaderSearch(){
@@ -80,10 +81,14 @@ function HeaderSearchOpen(props){
                             <div className="headerSearchFilterContainer">
                                 <div className="headerSearchFilterBox">
                                     <div className="headerSearchFilter">
-                                            <label htmlFor="categoryOption" className="radioLabel">
-                                                <h5 className="radioTitle">가전</h5>
-                                                <input type="radio" className="radioInput" name="headerSearchCategory1" id="categoryOption" title="categoryOption" value="00001"></input>
-                                            </label>
+                                            <InputRadio
+                                            id="headerSearchRadio1"
+                                            value="2"
+                                            />
+                                            <InputRadio
+                                            id="headerSearchRadio2"
+                                            value="1"
+                                            />
                                             
                                     </div>
                                     <div className="headerSearchFilter">
