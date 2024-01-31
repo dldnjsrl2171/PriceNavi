@@ -7,7 +7,7 @@ import "./headerSearch.css";
 //img
 import headerSearchIcon from "../../../Image/search.png"
 import { useDispatch, useSelector } from "react-redux";
-import InputInitButton from "../../../Common/Components/Buttons/inputInitButton";
+import { useEffect, useState } from "react";
 import InputText from "../../../Common/Components/Input/inputText";
 import InputRadio from "../../../Common/Components/Input/inputRadio";
 
@@ -55,10 +55,12 @@ function HeaderSearchClosed(props){
 }
 
 function HeaderSearchOpen(props){
-    
+    useEffect(()=>{
+        
+    });
+  
     const toggleSearch = () => 
     {
-        
         //State
         const toggle =  props.toggle;
         toggle();
@@ -82,17 +84,36 @@ function HeaderSearchOpen(props){
                                 <div className="headerSearchFilterBox">
                                     <div className="headerSearchFilter">
                                             <InputRadio
-                                            id="headerSearchRadio1"
+                                            id="headerSearchCategory1Radio1"
+                                            name="headerSearchCategory1"
+                                            category ="category1"
+                                            eventName ="headerRadioReducer"
                                             value="2"
                                             />
                                             <InputRadio
-                                            id="headerSearchRadio2"
+                                            id="headerSearchCategory1Radio2"
+                                            name="headerSearchCategory1"
+                                            category ="category1"
+                                            eventName ="headerRadioReducer"
                                             value="1"
                                             />
                                             
                                     </div>
                                     <div className="headerSearchFilter">
-
+                                            <InputRadio
+                                            id="headerSearchCategory2Radio1"
+                                            name="headerSearchCategory2"
+                                            category ="category2"
+                                            eventName ="headerRadioReducer"
+                                            value="2"
+                                            />
+                                            <InputRadio
+                                            id="headerSearchCategory2Radio2"
+                                            name="headerSearchCategory2"
+                                            category ="category2"
+                                            eventName ="headerRadioReducer"
+                                            value="1"
+                                            />
                                     </div>
                                     <div className="headerSearchFilter">
 
@@ -108,3 +129,5 @@ function HeaderSearchOpen(props){
     );
     return render;
 }
+
+
