@@ -12,6 +12,7 @@ import InputText from "../../../Common/Components/Input/inputText";
 import InputRadio from "../../../Common/Components/Input/inputRadio";
 
 //Store
+
 function HeaderSearch(){
 
     const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function HeaderSearch(){
     (
         <div id="headerSearch">
             <div className="headerSearchContainer">
-                {toggleState ?  <HeaderSearchOpen toggle={toggle} /> : <HeaderSearchClosed toggle={toggle} />}
+                {toggleState ?  <HeaderSearchOpen level={state.level} toggle={toggle} /> : <HeaderSearchClosed level="0" toggle={toggle} />}
             </div>
         </div> 
     );
@@ -55,15 +56,18 @@ function HeaderSearchClosed(props){
 }
 
 function HeaderSearchOpen(props){
+
     useEffect(()=>{
         
+       const level = props.level;
+       console.log(level);
+
     });
   
     const toggleSearch = () => 
     {
         //State
-        const toggle =  props.toggle;
-        toggle();
+        props.toggle();
     };
 
     const render = 
@@ -82,42 +86,7 @@ function HeaderSearchOpen(props){
                             </div>
                             <div className="headerSearchFilterContainer">
                                 <div className="headerSearchFilterBox">
-                                    <div className="headerSearchFilter">
-                                            <InputRadio
-                                            id="headerSearchCategory1Radio1"
-                                            name="headerSearchCategory1"
-                                            category ="category1"
-                                            eventName ="headerRadioReducer"
-                                            value="2"
-                                            />
-                                            <InputRadio
-                                            id="headerSearchCategory1Radio2"
-                                            name="headerSearchCategory1"
-                                            category ="category1"
-                                            eventName ="headerRadioReducer"
-                                            value="1"
-                                            />
-                                            
-                                    </div>
-                                    <div className="headerSearchFilter">
-                                            <InputRadio
-                                            id="headerSearchCategory2Radio1"
-                                            name="headerSearchCategory2"
-                                            category ="category2"
-                                            eventName ="headerRadioReducer"
-                                            value="2"
-                                            />
-                                            <InputRadio
-                                            id="headerSearchCategory2Radio2"
-                                            name="headerSearchCategory2"
-                                            category ="category2"
-                                            eventName ="headerRadioReducer"
-                                            value="1"
-                                            />
-                                    </div>
-                                    <div className="headerSearchFilter">
-
-                                    </div>
+                                    <GetCategory1></GetCategory1>
                                 </div>
                             </div>
                         </div>
@@ -130,4 +99,47 @@ function HeaderSearchOpen(props){
     return render;
 }
 
+function GetCategory1(){
+    
+    const id = "headerSearchCategory1Radio"
+    const name = "headerSearchCategory1"
+    
+    const dataList = 
+    [
+        {
+            itemName : "가전" ,
+            value : "00001"
+        }   ,
+        {
+            itemName : "패션" ,
+            value : "00002"
+        }   ,
+        {
+            itemName : "기타" ,
+            value : "00003"
+        }    
+        
+    ];
 
+    let radioList = [];
+    dataList.forEach((item , index) => {
+        radioList.push(
+            <InputRadio
+                key={index}
+                id={id + index}
+                name={name}
+                itemName={item.itemName}
+                value={item.value}
+            />
+        )
+    })
+
+    const render = 
+    (
+        <div name="headerSearchFilter" className="headerSearchFilter">
+            {radioList}
+        </div>
+    )
+    return render;
+    
+}
