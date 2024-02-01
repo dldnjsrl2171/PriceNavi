@@ -3,8 +3,8 @@ const initState = {
     level : 0
 };
 
-const HEADERSEARCH_TOGGLE = "HEADERSEARCH_TOGGLE";
-const HEADERSEARCH_LEVEL = "HEADERSEARCH_LEVEL";
+export const HEADERSEARCH_TOGGLE = "HEADERSEARCH_TOGGLE";
+export const HEADERSEARCH_LEVEL = "HEADERSEARCH_LEVEL";
 function HeaderSearchReducer(state = initState , action){
     const newState = {...state};
     console.log(action);
@@ -20,10 +20,10 @@ function HeaderSearchReducer(state = initState , action){
 
         case HEADERSEARCH_LEVEL :
             const newLevel = action.level;
+            console.log(newLevel);
             newState.level = newLevel;
         break;
     }
-    console.log(newState);
     return newState;
 }
 
